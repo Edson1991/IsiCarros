@@ -1,0 +1,27 @@
+//Classe de estrutura PRODUTO que contem: Nome, Departamento, Preço e Código de Barras
+
+public class Produto {
+	int codBarras;
+	String nome;
+	String departamento;
+	double preco;
+	
+	
+	//Metodo para mostrar os produto
+	void mostrarProduto() {
+		System.out.println("Nome: "+nome);
+		System.out.println("R$ "+preco);
+		System.out.println("Código de Barras: "+codBarras);
+		System.out.println("Departamento: "+departamento);
+		System.out.println("");
+		
+	}
+	
+	//Metodo para aplicar desconto
+	double aplicarDesconto (double desconto) {
+		double precodesconto;
+		precodesconto = preco - (preco*desconto/100);
+	return precodesconto;
+	}
+
+}

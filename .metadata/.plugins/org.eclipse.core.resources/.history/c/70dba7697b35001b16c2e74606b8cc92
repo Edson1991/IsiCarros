@@ -1,0 +1,14 @@
+/* Quando eu declaro uma classe, na verdade eu estou declarando um novo tipo de dado (estrutura)
+ * Neste caso, o tipo de CARRO contém propriedades (atributos) que são: Marca, modelo, ano, cor e preço.
+ */
+
+public class Carro {
+	
+	String marca;
+	String modelo;
+	String cor;
+	int    ano;
+	double preco;	
+		
+	
+}

@@ -1,0 +1,13 @@
+import core.ContaBancaria;
+
+public class Posto {
+	public static void main(String[] args) {
+
+		BombaDeCombustivel b1 = new BombaDeCombustivel();
+		
+		b1.setNomeCombustivel("Alcool");
+		b1.setValorCombustivel(2.50);
+		b1.setQtdLitros(10.00);
+		
+			}
+}

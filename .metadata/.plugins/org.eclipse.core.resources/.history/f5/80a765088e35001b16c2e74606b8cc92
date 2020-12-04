@@ -1,0 +1,16 @@
+
+public class FabricaDeCarros {
+	String nome;
+	
+	Carro fabricarUmCarroNovo(){
+		Carro novoCarro = new Carro();
+		novoCarro.marca = "Vorquisvaguem";
+		novoCarro.modelo = "Gorzinho bola";
+		novoCarro.ano = 2020;
+		novoCarro.cor = "Branca";
+		novoCarro.preco = 30000;
+		
+		return novoCarro;	
+		
+	}
+}
