@@ -64,12 +64,18 @@ public class BombaDeCombustivel {
 
 	// metodo informando litros para calcular valor total a ser pago
 	public void abastecerPorLitros(double litros) {
+		if(litros <=0) {
+			throw new RuntimeException("Quantidade de litros deve ser positiva");
+		}
 		qtdLitros = litros;
 		valorTotal = litros * valorCombustivel;
 	}
 
 	// metodo informando valor total a ser pago para calcular qtde litros
 	public void abastecerPorValor(double valor) {
+		if(valor<=0) {
+		throw new RuntimeException("Valor invalido para abastecimento");
+		}
 		valorTotal = valor;
 		qtdLitros = valor / valorCombustivel;
 	}
