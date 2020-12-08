@@ -1,5 +1,7 @@
 package userinterface;
 
+import java.util.ArrayList;
+
 import model.CartaoCashBack;
 import model.CartaoPrePago;
 
@@ -9,46 +11,58 @@ public class Balada {
 		
 		//A Notação [] indica que a variavel cartões não armazena mais um único objeto
 		// e sim um conjunto d eojetos
-		// Todo conjunto (vetor/array) é coleção de tamanho fixo e nãoredimensionavel, que armazena
+		// Todo conjunto (vetor/array) é coleção de tamanho fixo e não redimensionavel, que armazena
 		//um número finito de valores.
 		//cada valor é acessado através de uma posição (que sempre inicia em oo)
 		
-		CartaoPrePago cartoes[]; // declarei o conjunto
-		cartoes = new CartaoPrePago[5]; // aqui eu defino que o meu vetor Cartoes tem tamanho 5
+		//CartaoPrePago cartoes[]; // declarei o conjunto
+		//cartoes = new CartaoPrePago[5]; // aqui eu defino que o meu vetor Cartoes tem tamanho 5
 										// o que siginica isso? Que eu posso apontar para 5 objetos diferentes
 		
 		// esta declaração acima equivale a substituir 5 declarações de variaveis do tipo cartaoPrePago
 		// agora, mais do que nunca, preciso dos objetos
 		// a notação [0] indica que estou acessando aposição 0 do vetor, e assim por diante.
 		
-		cartoes[0] = new CartaoPrePago ("11111", "Cliente PP1",2030,10,100);
-		cartoes[1] = new CartaoCashBack ("22222", "Cliente CB1",2030,10,200,1);
-		cartoes[2] = new CartaoCashBack ("33333", "Cliente CB2",2030,10,300,2);
-		cartoes[3] = new CartaoCashBack ("44444", "Cliente CB3",2030,10,400,3);
-		cartoes[4] = new CartaoCashBack ("55555", "Cliente CB5",2030,10,400,3);
+		//cartoes[0] = new CartaoPrePago ("11111", "Cliente PP1",2030,10,100);
+		//cartoes[1] = new CartaoCashBack ("22222", "Cliente CB1",2030,10,200,1);
+		//cartoes[2] = new CartaoCashBack ("33333", "Cliente CB2",2030,10,300,2);
+		//cartoes[3] = new CartaoCashBack ("44444", "Cliente CB3",2030,10,400,3);
+		//cartoes[4] = new CartaoCashBack ("55555", "Cliente CB5",2030,10,400,3);
 
+				
+		ArrayList<CartaoPrePago> lista;		
+		lista = new ArrayList<CartaoPrePago>();
+		
+		lista.add(new CartaoPrePago ("11111", "Cliente PP1",2030,10,100));
+		lista.add(new CartaoCashBack ("22222", "Cliente CB1",2030,10,200,1));
+		lista.add(new CartaoCashBack ("33333", "Cliente CB2",2030,10,300,2));
+		lista.add(new CartaoCashBack ("44444", "Cliente CB3",2030,10,400,3));
+		lista.add(new CartaoCashBack ("55555", "Cliente CB5",2030,10,500,3));
 
 		for (int pos=0; pos< 5; pos++) {
-			cartoes[pos].adiconarCredito(1000);
-			System.out.println("Adicionando R$ 1000 "+cartoes[pos].getNumeroCartao());
+			lista.get(pos).adiconarCredito(1000);
+			System.out.println("Adicionando R$ 1000 no cartão: "+lista.get(pos).getNumeroCartao());
 		}
 		
-		for (int pos=0; pos<cartoes.length;pos++) {
-			if(cartoes[pos].comprar(100.00)){
-				System.out.println("Compra aprovada no cartão "+cartoes[pos].getNumeroCartao());
+		System.out.println("");
+
+		for (int pos=0; pos<lista.size();pos++) {
+			if(lista.get(pos).comprar(100.00)){
+				System.out.println("Compra aprovada no cartão "+lista.get(pos).getNumeroCartao());
 			}
 			else {
-				System.out.println("Compra nao autorizada no cartao "+cartoes[pos].getNumeroCartao());
+				System.out.println("Compra nao autorizada no cartao "+lista.get(pos).getNumeroCartao());
 			}
 		}
+		
+		System.out.println("");
 			
-		for (int pos=0; pos<cartoes.length;pos++) {
-				System.out.println(cartoes[pos]);
+		for (int pos=0; pos<lista.size();pos++) {
+				System.out.println(lista.get(pos)); // chamando o metodo "toString" das classes filha ou pai (dependendo da posição do vetor)
+													// nota-se que não precisa informar o nome metodo
 			}	
-
 		
-		
-		
+	
 		/*CartaoPrePago c1, c2, c3, c4;
 		
 		c1 = new CartaoPrePago("11111", "Edson", 2025,11,100); // Instaciado como CartaoPrePago 
